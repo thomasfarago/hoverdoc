@@ -32,16 +32,23 @@ $(".hover-img").each(function(i, el) {
   $e.attr("src", "images/" + el.getAttribute("file-img"))
   $e.css({ 'position': 'absolute', 'display':'none', 'z-index': 99 })
   $el.css({ 'color': TEXT_COLOR})
-  el.parentNode.insertBefore(_e, el.nextSibling)
+  el.appendChild(_e)
+
+  var close;
 
   $(this)
-    .mouseover(function(){
+    .mouseover(function() {
+      close = false
       $el.css({ 'color': TEXT_COLOR_HOVER })
       $e.css({ 'display': 'block' })
     })
-    .mouseout(function(){
-      $el.css({ 'color': TEXT_COLOR})
-      $e.css({ 'display': 'none' })
+    .mouseout(function() {
+      close = true
+      setTimeout(() => {
+        if (!close) return
+        $el.css({ 'color': TEXT_COLOR})
+        $e.css({ 'display': 'none' })
+      }, 150)
     })
 
 })
