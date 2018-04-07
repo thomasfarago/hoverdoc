@@ -1,12 +1,5 @@
-/*
-	 CSS-Tricks Example
-	 by Chris Coyier
-	 http://css-tricks.com
-*/
-
-
 * { margin: 0; padding: 0; }
-body { font: 18px/1.4 Georgia, serif; }
+body { font: 20px/1.4 Ubuntu-light, serif; }
 
 article, aside, figure, footer, header, hgroup,
 menu, nav, section { display: block; }
@@ -15,6 +8,7 @@ menu, nav, section { display: block; }
 .hover_img a { position:relative; }
 .hover_img a span { position:absolute; display:none; z-index:99; }
 .hover_img a:hover span { display:block; }
+.hover_img { font-weight: bold; }
 
 /* The side navigation menu */
 .sidenav {
@@ -38,6 +32,11 @@ menu, nav, section { display: block; }
     color: white;
     display: block;
     transition: 1s;
+}
+
+.fullwidth {
+  width: 100%;
+  z-index: 0;
 }
 
 /* When you mouse over the navigation links, change their color */
